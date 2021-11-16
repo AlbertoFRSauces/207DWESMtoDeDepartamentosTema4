@@ -1,5 +1,5 @@
-# 207DWESMtoDeDepartamentosTema4
-Aplicación resumen MtoDeDepartamentosTema4.
+# 207DWESMtoDepartamentosTema4
+Aplicación resumen MtoDepartamentosTema4.
 
 ## Autor: Alberto Fernandez Ramirez
 
@@ -8,7 +8,7 @@ Aplicación resumen MtoDeDepartamentosTema4.
 **Ultima Actualización: 16/11/2021**
 
 ## Descripción 
-Aplicación resumen MtoDeDepartamentosTema4.
+Aplicación resumen MtoDepartamentosTema4.
 
 ## Funcionalidades
 - Establecer conexión a una base de datos
@@ -27,6 +27,6 @@ Aplicación resumen MtoDeDepartamentosTema4.
 
 ## Entornos
 ### Desarrollo (local)
--  http://192.168.3.107/207DWESMtoDeDepartamentosTema4/index.php
+-  http://192.168.3.107/207DWESMtoDepartamentosTema4/indexProyectoMtoDepartamentosTema4.php
 ### Explotación ()
--  http://192.168.3.107/207DWESMtoDeDepartamentosTema4/index.php
+-  http://192.168.3.107/207DWESMtoDepartamentosTema4/indexProyectoMtoDepartamentosTema4.php
