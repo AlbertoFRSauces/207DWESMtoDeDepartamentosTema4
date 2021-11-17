@@ -48,9 +48,7 @@
             }
             .entrar{
                 margin-top: 50px;
-            }
-            .salir{
-                margin-top: 200px;
+                margin-bottom: 50px;
             }
         </style>
     </head>
