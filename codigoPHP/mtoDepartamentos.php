@@ -1,3 +1,10 @@
+<?php
+//Comprobar si se ha pulsado el boton volver
+        if (isset($_REQUEST['volver'])) {
+            header('Location: ../indexProyectoMtoDepartamentosTema4.php');
+            exit;
+        }
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -11,7 +18,7 @@
         <?php
         /*
          * @author: Alberto Fernandez Ramirez
-         * @version: 1.1 Realizacion del ejercicio
+         * @version: 1.2 Realizacion del ejercicio
          * @since: Version 1.0
          * @copyright: Copyright (c) 2021, Alberto Fernandez Ramirez
          * Created on: 16-Noviembre-2021
@@ -27,12 +34,6 @@
 
         //Variables maximos y minimos
         define("TAMANO_MAXIMO_DESCDEPARTAMENTO", 255); //Maximo del campo DescDepartamento
-        
-        //Comprobar si se ha pulsado el boton volver
-        if (isset($_REQUEST['volver'])) {
-            header('Location: ../indexProyectoMtoDepartamentosTema4.php');
-            exit;
-        }
         
         //Variable de entrada correcta inicializada a true
         $entradaOK = true;
@@ -64,7 +65,7 @@
                             <input name="descDepartamento" id="descDepartamento" type="text" value="<?php echo isset($_REQUEST['descDepartamento']) ? $_REQUEST['descDepartamento'] : ''; ?>" placeholder="Introduzca la Descripcion del Departamento">
                             <?php echo '<span>' . $aErrores['descDepartamento'] . '</span>' ?>
                             <!--Campo Boton Enviar-->
-                            <input class="enviar" id="enviar" type="submit" name="enviar" value="Enviar"/>
+                            <input class="enviar" id="enviar" type="submit" name="enviar" value="Buscar"/>
                         </div>
                     </li>
                 </ul>
@@ -119,14 +120,15 @@
                     <?php
                     
                     $oDepartamento = $resultadoConsulta->fetchObject(); // Obtengo el primer registro de la consulta como un objeto
-                    while ($oDepartamento) { // recorro los registros que devuelve la consulta de la consulta 
+                    while ($oDepartamento) { // recorro los registros que devuelve la consulta de la consulta
+                        $codDepartamento = $oDepartamento->CodDepartamento; // obtengo el valor del codigo del departamento del registro actual y lo almaceno en una variable
                         ?>
                         <tr>
-                            <td><?php echo $oDepartamento->CodDepartamento; // obtengo el valor del codigo del departamento del registro actual  ?></td>
+                            <td><?php echo $codDepartamento; // obtengo el valor del codigo del departamento del registro actual  ?></td>
                             <td><?php echo $oDepartamento->DescDepartamento; // obtengo el valor de la descripcion del departamento del registro actual  ?></td>
                             <td><?php echo $oDepartamento->FechaBaja; // obtengo el valor de la fecha de baja del departamento del registro actual   ?></td>
                             <td><?php echo $oDepartamento->VolumenNegocio; // obtengo el valor de la fecha de baja del departamento del registro actual   ?></td>
-                            <td class="botonestabla"><img src="../webroot/css/img/lapiz.png" class="imagenboton" alt="Lapiz" /></td>
+                            <td class="botonestabla"><a href="../codigoPHP/mtoDepartamentosEditar.php?<?php echo 'CodigoDepartamento='.$codDepartamento;?>"><img src="../webroot/css/img/lapiz.png" class="imagenboton" alt="Lapiz" /></a></td>
                             <td class="botonestabla"><img src="../webroot/css/img/papelera.png" class="imagenboton" alt="Papelera" /></td>
                             <td class="botonestabla"><img src="../webroot/css/img/ojo.png" class="imagenboton" alt="Ojo" /></td>
                         </tr>

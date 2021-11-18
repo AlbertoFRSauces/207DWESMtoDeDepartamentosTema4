@@ -72,7 +72,9 @@ body{
     margin-top: 6px;
 }
 
-/*CONTENIDO DEL FORMULARIO Y BOTONES*/
+
+
+/*CONTENIDO DEL FORMULARIO PAGINA PRINCIPAL Y BOTONES MTODEPARTAMENTOS*/
 form{
     margin-top: 15px;
     margin-bottom: 70px;
@@ -193,4 +195,38 @@ table td{
     width: 40px;
     padding: 5px;
 
+}
+
+
+
+/*CONTENIDO DEL FORMULARIO EDITAR Y BOTONES ACEPTAR Y CANCELAR*/
+.formularioeditar{
+    margin-top: 15px;
+    margin-bottom: 70px;
+}
+.fieldsetEditar{
+    border: 2px solid black;
+    width: 600px;
+    height: 300px;
+    margin: auto;
+}
+.botoneditar{
+    width: 200px;
+    height: 25px;
+    background-color: #252525;
+    margin: 5px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.botoneditar:hover{
+    width: 200px;
+    height: 25px;
+    background-color: white;
+    margin: 5px;
+    text-align: center;
+    color: #252525;
+    text-transform: uppercase;
+    cursor: pointer;
 }

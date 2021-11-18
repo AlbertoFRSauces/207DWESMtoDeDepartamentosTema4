@@ -1,3 +1,15 @@
+<?php
+//Comprobar si se ha pulsado el boton volver
+if (isset($_REQUEST['salir'])) {
+    header('Location: ../proyectoTema4/indexProyectoTema4.php');
+    exit;
+}
+//Comprobar si se ha pulsado el boton volver
+if (isset($_REQUEST['mtoDepartamentos'])) {
+    header('Location: ../207DWESMtoDepartamentosTema4/codigoPHP/mtoDepartamentos.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -60,10 +72,10 @@
             <article class="segundot">
                 <h2>TEMA 4 - MtoDepartamentosTema4</h2>
             </article>
-            <form action="../207DWESMtoDepartamentosTema4/codigoPHP/mtoDepartamentos.php">
+            <form >
                 <input type="submit" value="MtoDepartamentos" name="mtoDepartamentos" class="entrar"/>
             </form>
-            <form action="../proyectoTema4/indexProyectoTema4.php" class="salir">
+            <form>
                 <input type="submit" value="SALIR" name="salir" class="salir"/>
             </form>
         
