@@ -14,16 +14,11 @@ if (isset($_REQUEST['cancelar'])) {
     exit;
 }
 
-//Incluyo las variables de la conexion
-require_once '../config/configDBPDO.php';
-//Incluyo la libreria de validacion
-require_once '../core/210322ValidacionFormularios.php';
+require_once '../config/configDBPDO.php';//Incluyo las variables de la conexion
+require_once '../core/210322ValidacionFormularios.php';//Incluyo la libreria de validacion
 
-//Variable obligatorio inicializada a 1
-define("OBLIGATORIO", 1);
-
-//Variable de entrada correcta inicializada a true
-$entradaOK = true;
+define("OBLIGATORIO", 1);//Variable obligatorio inicializada a 1
+$entradaOK = true;//Variable de entrada correcta inicializada a true
 
 //Creo el array de errores y lo inicializo a null
 $aErrores = [
@@ -36,8 +31,7 @@ $aRespuestas = [
     'volumenNegocio' => null
 ];
 
-//Obtengo el contenido de la base de datos
-try {
+try {//Obtengo el contenido de la base de datos dentro del try
     //Hago la conexion con la base de datos
     $DAW207DBDepartamentos = new PDO(HOST, USER, PASSWORD);
     // Establezco el atributo para la aparicion de errores con ATTR_ERRMODE y le pongo que cuando haya un error se lance una excepcion con ERRMODE_EXCEPTION
@@ -130,7 +124,7 @@ if ($entradaOK) {
         </head>
         <body>
             <main>
-                <form name="formulario" action="<?php echo $_SERVER['PHP_SELF']."?CodigoDepartamento=".$codDepartamentoEnCurso; ?>" method="post" class="formularioeditar">
+                <form name="formulario" action="<?php echo $_SERVER['PHP_SELF'] . "?CodigoDepartamento=" . $codDepartamentoEnCurso; ?>" method="post" class="formularioeditar">
                     <fieldset class="fieldsetEditar">
                         <p>Editar departamento</p>
                         <ul>
@@ -147,10 +141,8 @@ if ($entradaOK) {
                                 <div>
                                     <label for="descDepartamento"><strong>Descripción de departamento</strong></label>
                                     <input name="descDepartamento" id="descDepartamento" type="text" value="<?php
-                                    //Compruebo si la variable descDepartamento esta definida y no es null
-                                    if(isset($_REQUEST['descDepartamento'])){
-                                        //Si existe, compruebo que no se encuentra en el array de errores
-                                        if($aErrores['descDepartamento'] =! null){
+                                    if(isset($_REQUEST['descDepartamento'])){//Compruebo si la variable descDepartamento esta definida y no es null
+                                        if($aErrores['descDepartamento'] != null){//Si existe, compruebo que no se encuentra en el array de errores
                                             echo $descDepartamentoEnCurso;//Si no se encuentra en el array de errores imprimo el contenido de la variable de la base de datos
                                         }else{
                                             echo $_REQUEST['descDepartamento'];//Si se encuentra en el array de errores imprimo el contenido de $_REQUEST
@@ -158,9 +150,8 @@ if ($entradaOK) {
                                     }else{
                                         echo $descDepartamentoEnCurso;//Si no existe imprimo el contenido de la variable de la base de datos
                                     }
-                                    ?>"
-                                    placeholder="Introduzca la descripción del departamento">
-                                    <?php echo '<span>' . $aErrores['descDepartamento'] . '</span>' ?>
+                                    ?>" placeholder="Introduzca la descripción del departamento">
+                                    <?php echo ($aErrores['descDepartamento'] != null ? '<span>' . $aErrores['descDepartamento'] . '</span>' : null); ?>
                                 </div>
                             </li>
                             <!--Campo Fecha de baja-->
@@ -175,10 +166,8 @@ if ($entradaOK) {
                                 <div>
                                     <label for="volumenNegocio"><strong>Volumen de negocio</strong></label>
                                     <input name="volumenNegocio" id="volumenNegocio" type="text" value="<?php
-                                    //Compruebo si la variable descDepartamento esta definida y no es null
-                                    if(isset($_REQUEST['volumenNegocio'])){
-                                        //Si existe, compruebo que no se encuentra en el array de errores
-                                        if($aErrores['volumenNegocio'] =! null){
+                                    if(isset($_REQUEST['volumenNegocio'])){//Compruebo si la variable descDepartamento esta definida y no es null
+                                        if($aErrores['volumenNegocio'] != null){//Si existe, compruebo que no se encuentra en el array de errores
                                             echo $volumenNegocioEnCurso;//Si no se encuentra en el array de errores imprimo el contenido de la variable de la base de datos
                                         }else{
                                             echo $_REQUEST['volumenNegocio'];//Si se encuentra en el array de errores imprimo el contenido de $_REQUEST
@@ -186,9 +175,8 @@ if ($entradaOK) {
                                     }else{
                                         echo $volumenNegocioEnCurso;//Si no existe imprimo el contenido de la variable de la base de datos
                                     }
-                                    ?>" 
-                                    placeholder="Introduzca el volumen de negocio">
-                                    <?php echo '<span>' . $aErrores['volumenNegocio'] . '</span>' ?>
+                                    ?>" placeholder="Introduzca el volumen de negocio">
+                                    <?php echo ($aErrores['volumenNegocio'] != null ? '<span>' . $aErrores['volumenNegocio'] . '</span>' : null); ?>
                                 </div>
                             </li>
                             <!--Campo Boton Aceptar y Cancelar-->

@@ -6,7 +6,7 @@
     define('PASSWORD', 'P@ssw0rd');//Contraseña del usuario de la base de datos
     
 
-    //CONFIGURACION DE EXPLOTACION
+    //CONFIGURACION DE DESARROLLO
     /*
     define('HOST', 'mysql:host=daw207.sauces.local;dbname=DB207DWESMtoDepartamentosTema4');//Direccion IP del host y nombre de la base de datos
     define('USER', 'User207DWESMtoDepartamentosTema4');//Nombre del usuario de la base de datos
