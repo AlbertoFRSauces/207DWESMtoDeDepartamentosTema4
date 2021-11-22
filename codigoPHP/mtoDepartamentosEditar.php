@@ -132,14 +132,14 @@ if ($entradaOK) {
                             <li>
                                 <div>
                                     <label for="codDepartamento"><strong>Código de departamento</strong></label>
-                                    <input name="codDepartamento" id="codDepartamento" type="text" value="<?php echo $codDepartamentoEnCurso?>" readonly>
+                                    <input name="codDepartamento" id="codDepartamento" type="text" value="<?php echo $codDepartamentoEnCurso?>" disabled="disabled">
                                     
                                 </div>
                             </li>
                             <!--Campo Descripcion Departamento-->
                             <li>
                                 <div>
-                                    <label for="descDepartamento"><strong>Descripción de departamento</strong></label>
+                                    <label for="descDepartamento"><strong>Descripción de departamento*</strong></label>
                                     <input name="descDepartamento" id="descDepartamento" type="text" value="<?php
                                     if(isset($_REQUEST['descDepartamento'])){//Compruebo si la variable descDepartamento esta definida y no es null
                                         if($aErrores['descDepartamento'] != null){//Si existe, compruebo que no se encuentra en el array de errores
@@ -158,13 +158,13 @@ if ($entradaOK) {
                             <li>
                                 <div>
                                     <label for="fechaBaja"><strong>Fecha de Baja</strong></label>
-                                    <input name="fechaBaja" id="fechaBaja" type="text" value="<?php echo empty($fechaBajaEnCurso) ? "NULL" : $fechaBajaEnCurso;?>" readonly>
+                                    <input name="fechaBaja" id="fechaBaja" type="text" value="<?php echo empty($fechaBajaEnCurso) ? "NULL" : $fechaBajaEnCurso;?>" disabled="disabled">
                                 </div>
                             </li>
                             <!--Campo Volumen de Negocio-->
                             <li>
                                 <div>
-                                    <label for="volumenNegocio"><strong>Volumen de negocio</strong></label>
+                                    <label for="volumenNegocio"><strong>Volumen de negocio*</strong></label>
                                     <input name="volumenNegocio" id="volumenNegocio" type="text" value="<?php
                                     if(isset($_REQUEST['volumenNegocio'])){//Compruebo si la variable descDepartamento esta definida y no es null
                                         if($aErrores['volumenNegocio'] != null){//Si existe, compruebo que no se encuentra en el array de errores
@@ -181,8 +181,8 @@ if ($entradaOK) {
                             </li>
                             <!--Campo Boton Aceptar y Cancelar-->
                             <li>
-                                <input class="botoneditar" id="aceptar" type="submit" name="aceptar" value="Aceptar"/>
-                                <input class="botoneditar" id="cancelar" type="submit" name="cancelar" value="Cancelar"/>
+                                <input class="botonaceptar" id="aceptar" type="submit" name="aceptar" value="Aceptar"/>
+                                <input class="botoncancelar" id="cancelar" type="submit" name="cancelar" value="Cancelar"/>
                             </li>
                         </ul>
                     </fieldset>

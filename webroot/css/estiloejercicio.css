@@ -206,27 +206,37 @@ table td{
 }
 .fieldsetEditar{
     border: 2px solid black;
-    width: 600px;
+    width: 700px;
     height: 300px;
     margin: auto;
 }
-.botoneditar{
+.botonaceptar{
     width: 200px;
     height: 25px;
-    background-color: #252525;
+    background-color: #00f200;
     margin: 5px;
     text-align: center;
     color: white;
     text-transform: uppercase;
     cursor: pointer;
+    font-weight: bold;
 }
-.botoneditar:hover{
+.botonaceptar:hover{
+    background-color: white;
+    color: #00f200;
+}
+.botoncancelar{
     width: 200px;
     height: 25px;
-    background-color: white;
+    background-color: #ff1b22;
     margin: 5px;
     text-align: center;
-    color: #252525;
+    color: white;
     text-transform: uppercase;
     cursor: pointer;
+    font-weight: bold;
+}
+.botoncancelar:hover{
+    background-color: white;
+    color: #ff1b22;
 }
