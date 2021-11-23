@@ -17,4 +17,4 @@ CREATE TABLE IF NOT EXISTS DB207DWESMtoDepartamentosTema4.Departamento(
 -- Crear usuario
 CREATE USER 'User207DWESMtoDepartamentosTema4'@'%' IDENTIFIED BY 'P@ssw0rd';
 -- Dar permisos al usuario
-GRANT ALL PRIVILEGES ON DB207DWESMtoDepartamentosTema4.* to 'User207DWESMtoDepartamentosTema4'@'%' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON DB207DWESMtoDepartamentosTema4.* to 'User207DWESMtoDepartamentosTema4'@'%';
